@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text],
+input[type=tel],
+input[type=password],
+input[type=email],
+input[type=date], 
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 60%;
+}
+
+
+form {
+  display: inline-block;
+  text-align: left;
+}
+
+body {
+    text-align: center;
+    align-self: center;
+}
+
+</style>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Formulario Info</title>
+</head>
+
+<script defer src="forms.js">
+    function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        }
+        else {
+            x.type = "password";
+        }
+    }
+</script>
+
+<body>
+
+<h3>Ingresa tus datos personales</h3>
+
+<div>
+  <form action="forms2.html" method="GET">
+    <label for="fname">Nombres</label>
+    <input type="text" id="nombre" name="firstname" placeholder="Ingresa su nombre">
+
+    <label for="lname">Apellidos</label>
+    <input type="text" id="apellido" name="lastname" placeholder="Ingresa tus apellidos">
+
+    <label for="fname">Usuario</label>
+    <input type="text" id="userID" name="firstname" placeholder="Ingresa tu usuario/alias">
+
+    <label for="lname">Contraseña</label>
+    <input type="password" id="password" name="lastname" placeholder="Ingresa una contraseña">
+    <input type="checkbox" onclick="myFunction()">Mostrar contraseña
+
+
+    <label for="lname">Correo</label>
+    <input type="email" id="correo" name="lastname" placeholder="Pon tu correo">
+
+    <label for="lname">Dirección</label>
+    <input type="text" id="address" name="lastname" placeholder="Ingresa tu dirección">
+
+    <label for="lname">Teléfono</label>
+    <input type="tel" name="telefono" min="0" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" placeholder="Ingrese su Teléfono">
+
+    <label for="lname">Fecha de nacimiento</label>
+    <input type="date" name="fecha_de_nacimiento" name="nacimiento" placeholder="Ingresa tu fecha de nacimiento">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="peru">Perú</option>
+      <option value="arequipa">Arequipa</option>
+      <option value="namek">Namek</option>
+      <option value="atlantis">Atlantis</option>
+      <option value="sanfransokyo">San Fransokyo</option>
+      <option value="otro">Otro</option>
+    </select>
+  
+    <input type="submit" value="Entregar" onclick="getData()">
+  </form>
+</div>
+
+</body>
+</html>
+
